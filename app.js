@@ -2,7 +2,7 @@ import DHT from 'hyperdht'
 import hie from 'hypercore-id-encoding'
 import Protomux from 'protomux'
 import Channel from 'jsonrpc-mux'
-import {html, render} from 'lit-html'
+import { html, render } from 'lit-html'
 import prettyMilliseconds from 'pretty-ms'
 const defaultRoute = '/_swag.json' // should import this from swag
 
@@ -39,12 +39,11 @@ connectButton.addEventListener('click', () => {
 })
 
 function destroy () {
-    document.getElementById('api').style.display = 'none'
-    document.getElementById('role').innerHTML = ''
-    document.getElementById('version').innerHTML = ''
-    document.getElementById('description').innerHTML = ''
+  document.getElementById('api').style.display = 'none'
+  document.getElementById('role').innerHTML = ''
+  document.getElementById('version').innerHTML = ''
+  document.getElementById('description').innerHTML = ''
 }
-
 
 const paramTemplate = (name, param) => {
   if (param.not) return html`<p>no parameters</p>`
@@ -154,7 +153,6 @@ function onErrorConnection (message) {
   heroSection.style.display = 'none'
   connectButton.classList.remove('loading')
 }
-
 
 function connect (peerKey, route) {
   let publicKey = null

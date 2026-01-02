@@ -14,7 +14,8 @@ pear run pear://qrxbzxyqup1egwjnrmp7fcikk31nekecn43xerq65iq3gjxiaury
 But if you want to inspect the code, and run it locally. clone this repo and run 
 
 ```
-pear dev .
+npm i
+npm run dev
 ```
 
 The first screen will ask you for a peer key to connect to.
