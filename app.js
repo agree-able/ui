@@ -24,8 +24,8 @@ const heroSection = document.getElementById('hero-section')
 const connectButton = document.getElementById('connect')
 const peerKeyElement = document.getElementById('peerKey')
 
-if (Pear.config.linkData) {
-  peerKeyElement.value = Pear.config.linkData
+if (Pear.app.linkData) {
+  peerKeyElement.value = Pear.app.linkData
   connectButton.classList.add('loading')
   connect(peerKeyElement.value)
 } else {
@@ -181,8 +181,8 @@ function connect (peerKey, route) {
     const routesHolder = document.getElementById('routes')
     render(routesTemplate(api.routes), routesHolder)
 
-    // if there is Pear.config.linkData and only one route, go into form mode! 
-    if (Pear.config.linkData && api.routes.length === 1) {
+    // if there is Pear.app.linkData and only one route, go into form mode! 
+    if (Pear.app.linkData && api.routes.length === 1) {
       // hide the nav 
       document.getElementById('navbar').style.display = 'none'
       // hide any element with class with hero
