@@ -74,7 +74,7 @@ const routeTemplate = (route) => html`
             </div>
           </div>
           <div class="tile-content">
-            <p class="tile-title">Paramters</p>
+            <p class="tile-title">Parameters</p>
             <p class="tile-subtitle">
               ${paramTemplate(route.name, route.paramSchema)}
             <p>
