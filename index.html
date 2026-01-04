@@ -3,16 +3,27 @@
   <head>
     <meta charset="utf-8">
     <style>
+      pear-ctrl[data-platform="darwin"] {
+        margin-top: 12px;
+        margin-left: 10px;
+      }
+      #titlebar {
+        -webkit-app-region: drag;
+        height: 30px;
+        width: 100%;
+        position: fixed;
+        left: 0;
+        top: 0;
+        z-index: 1000;
+      }
       #api { display: none;}
-      body { background-color: #ffffff; }
       #peerKey { 
         width: 100%;
-        max-width: 600px; 
       }
-     /* Media query for screens wider than 800px */
+      /* Media query for screens wider than 800px */
       @media only screen and (min-width: 700px) {
         #peerKey {
-           width: 600px; /* Set width to 600px when screen is wider than 800px */
+          width: 643px; /* Set width to 600px when screen is wider than 800px */
         }
       }
       .response { display: none; }
@@ -25,6 +36,7 @@
       .timestamp-row { height: 20px; }
       .response-th { position: relative; top: 40px; }
       .about-section  { margin-top: 157px !important;  }
+      .navbar { margin-top: 30px; }
       .footer { padding-top: 10px; padding-left: 100px; padding-right: 100px; }
       .footer-links { list-style-type: none; }
       #hero-section { display: none; }
@@ -38,6 +50,9 @@
     <script type='module' src='./app.js'></script>
   </head>
   <body>
+    <div id="titlebar">
+      <pear-ctrl></pear-ctrl>
+    </div>
     <header id="navbar" class="navbar">
       <section class="navbar-section">
         <div class="input-group input-inline">
@@ -58,9 +73,9 @@
       </div>
       <p class="empty-title h5">The peer can't be reached</p>
       <p class="empty-subtitle">
-          Check if there is a typo in the key<br/>
-          <br/>
-          <span id="error-message"></span>
+        Check if there is a typo in the key<br/>
+        <br/>
+        <span id="error-message"></span>
       </p>
     </div> 
 
@@ -80,10 +95,10 @@
         <li class="divider" data-content="Downloads"></li>
         <li class="menu-item">
           <a id="downloadMJS" href="#">
-            <i class="icon icon-download"></i> agreement.mjs <span class="text-secondary">(import for code projects)</span>
+            <i class="icon icon-download"></i> agreement.mjs<span class="text-secondary">(import for code projects)</span>
           </a>
           <a id="downloadJSON" href="#">
-            <i class="icon icon-download"></i> swag.json <span class="text-secondary">(portable jsonschema version)</span>
+            <i class="icon icon-download"></i> swag.json<span class="text-secondary">(portable jsonschema version)</span>
           </a>
         </li>
     </div>
