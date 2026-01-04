@@ -5,16 +5,15 @@ A RPC explorer for [agreeable](https://github.com/agree-able/rpc) p2p rpc servic
 
 See [Agreeable RPC](https://github.com/agree-able/rpc) for creating p2p endpoints that you can test with this tool.
 
-This tool can also be run with pear, over p2p with 
+### Running
+
+This tool is built with [Pear](https://github.com/holepunchto/pear).
 
 ```
-pear run pear://qrxbzxyqup1egwjnrmp7fcikk31nekecn43xerq65iq3gjxiaury
-```
-
-But if you want to inspect the code, and run it locally. clone this repo and run 
-
-```
-pear dev .
+git clone https://github.com/agree-able/ui
+cd ui
+npm i
+pear run .
 ```
 
 The first screen will ask you for a peer key to connect to.
@@ -27,7 +26,6 @@ On connection
 
 Once it connects, you will see the api role, version and description. Then the routes available to call as functions. You can also download the agreement in .mjs or .json
 
-
 ![Connect Screen](./assets/ui-3.png)
 
 You can expand a route to inspect it and see the parameters, types and prepare to call it
@@ -35,9 +33,4 @@ You can expand a route to inspect it and see the parameters, types and prepare t
 
 ![Connect Screen](./assets/ui-4.png)
 
-on submit you will see the result that was provided from the remote server
-
-
-
-
-
+on submit you will see the result that was provided from the remote server.

@@ -2,7 +2,7 @@ import DHT from 'hyperdht'
 import hie from 'hypercore-id-encoding'
 import Protomux from 'protomux'
 import Channel from 'jsonrpc-mux'
-import {html, render} from 'lit-html'
+import { html, render } from 'lit-html'
 import prettyMilliseconds from 'pretty-ms'
 const defaultRoute = '/_swag.json' // should import this from swag
 
@@ -24,8 +24,8 @@ const heroSection = document.getElementById('hero-section')
 const connectButton = document.getElementById('connect')
 const peerKeyElement = document.getElementById('peerKey')
 
-if (Pear.config.linkData) {
-  peerKeyElement.value = Pear.config.linkData
+if (Pear.app.linkData) {
+  peerKeyElement.value = Pear.app.linkData
   connectButton.classList.add('loading')
   connect(peerKeyElement.value)
 } else {
@@ -39,12 +39,11 @@ connectButton.addEventListener('click', () => {
 })
 
 function destroy () {
-    document.getElementById('api').style.display = 'none'
-    document.getElementById('role').innerHTML = ''
-    document.getElementById('version').innerHTML = ''
-    document.getElementById('description').innerHTML = ''
+  document.getElementById('api').style.display = 'none'
+  document.getElementById('role').innerHTML = ''
+  document.getElementById('version').innerHTML = ''
+  document.getElementById('description').innerHTML = ''
 }
-
 
 const paramTemplate = (name, param) => {
   if (param.not) return html`<p>no parameters</p>`
@@ -75,7 +74,7 @@ const routeTemplate = (route) => html`
             </div>
           </div>
           <div class="tile-content">
-            <p class="tile-title">Paramters</p>
+            <p class="tile-title">Parameters</p>
             <p class="tile-subtitle">
               ${paramTemplate(route.name, route.paramSchema)}
             <p>
@@ -155,7 +154,6 @@ function onErrorConnection (message) {
   connectButton.classList.remove('loading')
 }
 
-
 function connect (peerKey, route) {
   let publicKey = null
   let conn = null
@@ -183,8 +181,8 @@ function connect (peerKey, route) {
     const routesHolder = document.getElementById('routes')
     render(routesTemplate(api.routes), routesHolder)
 
-    // if there is Pear.config.linkData and only one route, go into form mode! 
-    if (Pear.config.linkData && api.routes.length === 1) {
+    // if there is Pear.app.linkData and only one route, go into form mode! 
+    if (Pear.app.linkData && api.routes.length === 1) {
       // hide the nav 
       document.getElementById('navbar').style.display = 'none'
       // hide any element with class with hero
